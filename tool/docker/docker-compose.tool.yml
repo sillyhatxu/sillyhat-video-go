@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  mysql:
+    image: mysql:5.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=sillyhat_xu_password
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql/config:/etc/mysql/conf.d
+      - ./data/mysql/logs:/logs
+      - ./data/mysql/data:/var/lib/mysql
+    restart: always
